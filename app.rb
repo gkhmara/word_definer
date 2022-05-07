@@ -44,5 +44,8 @@ patch('/words/:id') do
 end
 
 delete('/words/:id') do
-  "This route will delete a word."
+  @word = Album.find([params[:id].to_i())
+  @word.delete()
+  @words = Word.all
+  erb(:words)
 end

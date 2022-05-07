@@ -5,4 +5,8 @@ class Word
     @name = name
   end
 
+  def self.all
+    @@words.values()
+  end
+
 end

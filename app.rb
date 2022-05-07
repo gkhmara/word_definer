@@ -5,11 +5,13 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  "This will be our home page."
+  @words = Word.all
+  erb(:words)
 end
 
 get('/words') do
-  "This route will show a list of all words."
+  @words = Word.all
+  erb(:words)
 end
 
 get('/words/new') do

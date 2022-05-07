@@ -31,7 +31,8 @@ post('/words') do
 end
 
 get('/words/:id/edit') do
-  "This will take us to a page with a form for updating a word with an ID of #{params[:id]}."
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
 end
 
 patch('/words/:id') do

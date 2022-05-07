@@ -35,7 +35,8 @@ get('/words/:id/edit') do
 end
 
 patch('/words/:id') do
-  "This route will update a word."
+  @word = Word.find(params[:id].to_i())
+  erb[:words]
 end
 
 delete('/words/:id') do

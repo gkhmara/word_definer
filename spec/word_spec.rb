@@ -52,4 +52,13 @@ describe '#Word' do
     end
   end
 
+  describe('#update') do
+    it("updates a word by id") do
+      word = Word.new("Hat", nil)
+      word.save()
+      word.update("Cat")
+      expect(word.name).to(eq("Cat"))
+    end
+  end
+
 end

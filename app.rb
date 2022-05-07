@@ -19,7 +19,8 @@ get('/words/new') do
 end
 
 get('/words/:id') do
-  "This route will show a specific word based on its ID. The value of ID here is #{params[:id]}."
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
 end
 
 post('/words') do
@@ -37,6 +38,8 @@ end
 
 patch('/words/:id') do
   @word = Word.find(params[:id].to_i())
+  @word.update(params[:name])
+  @words = Word.all
   erb[:words]
 end
 

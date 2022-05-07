@@ -26,4 +26,15 @@ describe '#Word' do
     end
   end
 
+  describe('.clear') do
+    it("clears all words") do
+      word = Word.new("Hat", nil)
+      word.save()
+      word2 = Word.new("Cat", nil)
+      word2.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
+    end
+  end
+
 end

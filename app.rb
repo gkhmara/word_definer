@@ -23,7 +23,11 @@ get('/words/:id') do
 end
 
 post('/words') do
-  "This route will add a word to our list of words."
+  name = params[:word_name]
+  word = Word.new(name, nil)
+  word.save()
+  @words = Word.all()
+  erb(:words)
 end
 
 get('/words/:id/edit') do

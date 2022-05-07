@@ -1,4 +1,6 @@
 require('sinatra')
+require('sinatra/reloader')
+also_reload('lib/**/*.rb')
 
 get('/') do
   "This will be our home page."

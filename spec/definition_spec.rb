@@ -83,8 +83,8 @@ describe '#Definition' do
     it("updates a definition by id") do
       definition = Definition.new("animal", @word.id, nil)
       definition.save()
-      definition.update("small furry animal", @word.id)
-      expect(definition.name).to(eq("small furry animal"))
+      definition.update("furry", @word.id)
+      expect(definition.name).to(eq("furry"))
     end
   end
 

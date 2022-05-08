@@ -9,10 +9,6 @@ class Word
     @id = id || @@total_rows += 1
   end
 
-  def definitions
-    Definitions.find_by_word(self.id)
-  end
-
   def self.all
     @@words.values()
   end
@@ -40,6 +36,10 @@ class Word
 
   def delete
     @@words.delete(self.id)
+  end
+
+  def definitions
+    Definitions.find_by_word(self.id)
   end
 
 end

@@ -12,6 +12,18 @@ describe '#Definition' do
     @word.save()
   end
 
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      word2 = Word.new("Hat", nil)
+      word2.save
+      definition = Definition.new("animal", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("furry animal", word2.id, nil)
+      definition2.save()
+      expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
+    end
+  end
+
   describe('#==') do
     it("is the same definition if it has the same attributes as another definition") do
       definition = Definition.new("animal", @word.id, nil)

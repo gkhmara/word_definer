@@ -45,7 +45,7 @@ patch('/words/:id') do
 end
 
 delete('/words/:id') do
-  @word = Album.find([params[:id].to_i())
+  @word = Album.find(params[:id].to_i())
   @word.delete()
   @words = Word.all
   erb(:words)

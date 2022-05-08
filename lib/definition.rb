@@ -41,10 +41,6 @@ class Definition
     @@definitions = {}
   end
 
-  def word
-    Word.find(self.word_id)
-  end
-
   def self.find_by_word(wrd_id)
     definitions = []
     @@definitions.values.each do |definition|
@@ -53,6 +49,10 @@ class Definition
       end
     end
     definitions
+  end
+
+  def word
+    Word.find(self.word_id)
   end
 
 end

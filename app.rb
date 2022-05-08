@@ -53,7 +53,7 @@ end
 
 get('/words/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
-  erb(:definition)
+  erb(:definitions)
 end
 
 post('/words/:id/definitions') do

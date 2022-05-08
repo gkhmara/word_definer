@@ -75,6 +75,7 @@ describe '#Word' do
 
   describe('#definitions') do
     it("returns a word's definition") do
+      Definition.clear()
       word = Word.new("Cat", nil)
       word.save()
       definition = Definition.new("animal", word.id, nil)

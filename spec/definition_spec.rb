@@ -41,4 +41,12 @@ describe '#Definition' do
     end
   end
 
+  describe('#save') do
+    it("saves a definition") do
+      definition = Definition.new("animal", @word.id, nil)
+      definition.save()
+      expect(Definition.all).to(eq([definition]))
+    end
+  end
+
 end

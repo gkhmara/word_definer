@@ -7,6 +7,7 @@
 ## Technologies Used
 
 * Ruby
+* HTML
 * RSPEC
 * Gemfile
 

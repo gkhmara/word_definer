@@ -8,7 +8,7 @@ describe '#Definition' do
   before(:each) do
     Word.clear()
     Definition.clear()
-    @word = Word.new("Hat", nil)
+    @word = Word.new("Cat", nil)
     @word.save()
   end
 
@@ -17,6 +17,16 @@ describe '#Definition' do
       definition = Definition.new("animal", @word.id, nil)
       definition2 = Definition.new("animal", @word.id, nil)
       expect(definition).to(eq(definition2))
+    end
+  end
+
+  describe('.all') do
+    it("returns a list of all definitions") do
+      definition = Definition.new("Cat", @word.id, nil)
+      definition.save()
+      definition2 = Definition.new("animal", @word.id, nil)
+      definition2.save()
+      expect(Definition.all).to(eq([definition, definition2]))
     end
   end
 

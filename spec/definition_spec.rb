@@ -12,6 +12,14 @@ describe '#Definition' do
     @word.save()
   end
 
+  describe('#word') do
+    it("finds the word a definition belings to") do
+      definition = Definition.new("animal", @word.id, nil)
+      definition.save()
+      expect(definition.word()).to(eq(@word))
+    end
+  end
+
   describe('.find_by_word') do
     it("finds definitions for a word") do
       word2 = Word.new("Hat", nil)
